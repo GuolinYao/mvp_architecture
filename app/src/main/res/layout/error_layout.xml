@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 没有网络的布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/main_content_bg"
+              android:gravity="center"
+              android:paddingBottom="80dp"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_server_warn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/icon_refresh"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="暂无网络"
+        android:textColor="#cddaf5"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/button_again"
+        android:layout_width="111dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_btn_login"
+        android:text="重试"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+</LinearLayout>

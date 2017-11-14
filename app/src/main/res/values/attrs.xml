@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--PullToRefreshLayout-->
+    <declare-styleable name="PullToRefreshLayout">
+        <attr name="refresh_header_layout" format="reference"/>
+        <attr name="refresh_layout_height" format="integer"/>
+        <attr name="refresh_prepare_text" format="string|reference"/>
+        <attr name="refresh_recycle_text" format="string|reference"/>
+        <attr name="refresh_loading_text" format="string|reference"/>
+        <attr name="refresh_complete_text" format="string|reference"/>
+    </declare-styleable>
+    <!--ScrollableLayout-->
+    <declare-styleable name="ScrollableLayout">
+        <attr name="scrollable_maxScroll" format="dimension"/>
+        <attr name="scrollable_scrollerFlywheel" format="boolean"/>
+        <attr name="scrollable_considerIdleMillis" format="integer"/>
+        <attr name="scrollable_defaultCloseUp" format="boolean"/>
+        <attr name="scrollable_friction" format="float"/>
+        <attr name="scrollable_closeUpAnimationMillis" format="integer"/>
+        <attr name="scrollable_closeUpAnimatorInterpolator" format="reference"/>
+    </declare-styleable>
+    <!--LoadMoreRecyclerView-->
+    <declare-styleable name="LoadMoreRecyclerView">
+        <attr name="loading_text" format="string"/>
+        <attr name="no_more_text" format="string"/>
+    </declare-styleable>
+    <!--BasicRecyclerView-->
+    <declare-styleable name="BasicRecyclerView">
+        <attr name="layout_mode" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+            <enum name="invalid_offset" value="2"/>
+            <enum name="grid" value="3"/>
+        </attr>
+        <attr name="column_num" format="integer"/>
+        <attr name="has_row_divider" format="boolean"/>
+        <attr name="has_rank_divider" format="boolean"/>
+        <attr name="divider_width" format="dimension"/>
+        <attr name="divider_height" format="dimension"/>
+        <attr name="divider_marginLeft" format="dimension"/>
+        <attr name="divider_marginRight" format="dimension"/>
+        <attr name="divider_marginTop" format="dimension"/>
+        <attr name="divider_marginBottom" format="dimension"/>
+        <attr name="divider_color" format="color"/>
+        <attr name="is_inner" format="boolean"/>
+        <attr name="is_process" format="boolean"/>
+        <attr name="process_background" format="integer|reference"/>
+        <attr name="is_start_animator" format="boolean"/>
+        <attr name="is_first_only" format="boolean"/>
+        <attr name="duration_animator" format="integer"/>
+    </declare-styleable>
+
+    <!--可自动换行布局-->
+    <declare-styleable name="flowLayout">
+        <attr name="horizontal_spacing" format="dimension"/>
+        <attr name="vertical_spacing" format="dimension"/>
+    </declare-styleable>
+</resources>

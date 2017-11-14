@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/common_blue</color>
+    <color name="colorPrimaryDark">@color/common_blue</color>
+    <color name="colorAccent">@color/common_blue</color>
+    <color name="colorBackground">@color/transparent</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+
+    <!-- 页面统一背景色 -->
+    <color name="transparent">#00000000</color>
+    <color name="divider_color">#e0e0e0</color>
+    <color name="hint_color">#ffc3cadc</color>
+    <color name="common_blue">#4684ff</color>
+    <color name="blue_2">#ff1b5be8</color>
+    <color name="blue_3">#b5ceff</color>
+    <color name="recycler_click_sel">#44CCCCCC</color>
+    <color name="main_content_bg">#fff7f8fd</color>
+    <color name="grey">#ff999999</color>
+    <color name="grey_2">#ff949494</color>
+    <color name="grey_3">#ff646464</color>
+    <color name="grey_4">#ffbdbdbd</color>
+    <color name="black_2">#ff323232</color>
+    <color name="black_3">#ff565656</color>
+    <color name="red">#ffff7675</color>
+    <color name="red_2">#ffff5958</color>
+    <color name="search_bg">#90000000</color>
+
+</resources>

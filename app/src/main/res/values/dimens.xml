@@ -1,0 +1,34 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_padding_top">0dp</dimen>
+    <dimen name="toolbar_height">49dp</dimen>
+
+    <!-- loading时背景的默认宽高 -->
+    <dimen name="loading_width">128dp</dimen>
+    <dimen name="loading_height">40dp</dimen>
+    <!-- 提示成功的toast默认宽高 -->
+    <dimen name="toast_success_width">128dp</dimen>
+    <dimen name="toast_success_height">103dp</dimen>
+    <!--编辑框的高度-->
+    <dimen name="edit_frame_height">41dp</dimen>
+    <dimen name="normal_edit_frame_height">45dp</dimen>
+    <dimen name="big_edit_frame_height">49dp</dimen>
+    <dimen name="btn_height">49dp</dimen>
+    <dimen name="normal_button_height">40dp</dimen>
+    <dimen name="normal_padding">15dp</dimen>
+    <!--字号-->
+    <dimen name="text_size_small_1">12sp</dimen>
+    <dimen name="text_size_small_2">13sp</dimen>
+    <dimen name="text_size_normal_1">14sp</dimen>
+    <dimen name="text_size_normal_2">15sp</dimen>
+    <dimen name="text_size_normal_3">16sp</dimen>
+    <dimen name="text_size_big_1">17sp</dimen>
+    <dimen name="text_size_big_2">18sp</dimen>
+    <dimen name="text_size_huge_1">19sp</dimen>
+    <dimen name="text_size_huge_2">20sp</dimen>
+
+
+
+</resources>

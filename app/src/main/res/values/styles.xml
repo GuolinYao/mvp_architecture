@@ -1,0 +1,143 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:listDivider">@drawable/divider_line</item>
+    </style>
+    <!--toolbar的theme -->
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--menu的字体颜色-->
+        <item name="actionMenuTextColor">#ffffff</item>
+        <!--menu 的选中颜色-->
+        <item name="selectableItemBackground">@drawable/toolbar_button_bg</item>
+        <!--menu 的字体大小-->
+        <item name="actionMenuTextAppearance">@style/ToolbarMenuTextSize</item>
+        <!--popup 显示位置-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+    <!--menu item 的背景 字体-->
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">#212121</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:selectableItemBackground">@drawable/toolbar_button_bg</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-- toolbar标题的文字大小-->
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!--menu 的字体大小-->
+    <style name="ToolbarMenuTextSize" parent="@style/TextAppearance.AppCompat.Menu">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:popupBackground">@drawable/popupmenu</item>
+    </style>
+
+    <!--<style name="OverflowButtonStyle" parent="Base.Widget.AppCompat.ActionButton.Overflow">-->
+    <!--<item name="android:width">30dp</item>-->
+    <!--<item name="android:height">30dp</item>-->
+    <!--</style>-->
+
+    <!--progressbar-->
+    <style name="Dialog" parent="android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 设置对话框背景不变暗 -->
+    </style>
+
+    <style name="text_style_1">
+        <item name="android:textColor">@color/grey_2</item>
+        <item name="android:textSize">@dimen/text_size_normal_2</item>
+    </style>
+    <!--个人信息左边文字-->
+    <style name="text_personal_info_left">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:textSize">@dimen/text_size_normal_2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/bg_bottom_line</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!--个人信息右边文字-->
+    <style name="text_personal_info_right">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:textSize">@dimen/text_size_normal_2</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--加载更多Progress-->
+    <style name="LoadMoreProgressStyle" parent="android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/loadmore_progress</item>
+    </style>
+    <!--wheelView 样式-->
+    <style name="MMTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@drawable/mm_trans</item>
+        <item name="android:windowBackground">@drawable/mm_trans</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/DataSheetAnimation</item>
+    </style>
+
+    <style name="DataSheetAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <!-- <item name="android:windowExitAnimation">@anim/push_down_out</item> -->
+    </style>
+
+    <!-- 确定提交 对话框 -->
+    <style name="CancelTheme.DataSheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--dialog主图-->
+    <style name="Supernatant_Theme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@drawable/mm_trans</item>
+        <item name="android:windowBackground">@drawable/mm_trans</item>
+        <item name="android:windowAnimationStyle">@style/DataSheetAnimation</item>
+    </style>
+    <!-- 搜索界面主题 -->
+    <style name="search_bg" parent="@style/AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/search_bg</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/image_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>

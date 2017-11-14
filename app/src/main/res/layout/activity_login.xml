@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:background="@drawable/login_bg"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_frame_height"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_edit_frame_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableStart="@drawable/icon_login_account"
+            android:paddingStart="7dp"
+            android:textColor="@color/white"
+            />
+
+        <com.hishixi.mentor.custom.view.ClearEditTextViewInLogin
+            android:id="@+id/cetv_account_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/transparent"
+            android:hint="@string/account_number_hint"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:drawableRight="@drawable/icon_clear_grey"
+            android:textColor="@color/grey_3"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_frame_height"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_edit_frame_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_login_password"
+            android:paddingStart="7dp"
+            android:textColor="@color/white"/>
+
+        <com.hishixi.mentor.custom.view.ClearEditTextViewInLogin
+            android:id="@+id/cetv_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:inputType="textPassword"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:hint="@string/account_password_hint"
+            android:maxLines="1"
+            android:drawableRight="@drawable/icon_clear_grey"
+            android:singleLine="true"
+            android:textColor="@color/grey_3"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="17sp"/>
+
+        <FrameLayout
+            android:id="@+id/fl_show_password"
+            android:layout_width="@dimen/edit_frame_height"
+            android:layout_height="@dimen/edit_frame_height"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0"
+            >
+
+            <ImageView
+                android:id="@+id/iv_show_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_hide_password"
+                />
+        </FrameLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_btn_login"
+        android:text="@string/login_str"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:text="@string/forget_password_str"
+        android:textColor="@color/grey_3"
+        android:textSize="14sp"/>
+</LinearLayout>

@@ -1,0 +1,158 @@
+apply plugin: 'com.android.application'
+apply from: 'tinkerpatch.gradle'//tinder 热更新
+apply plugin: 'bugly'
+//apply plugin: 'me.tatarka.retrolambda'//添加插件 lambda
+apply plugin: 'org.greenrobot.greendao'//greenDap
+//apply plugin: 'com.neenbedankt.android-apt'//dagger2 需要的打包工具
+
+bugly {
+    appId = '6fcb182406' // 注册时分配的App ID
+    appKey = 'b4a88cc3-9752-48f3-b9d2-e448a813ff66' // 注册时分配的App Key
+}
+
+android {
+    compileSdkVersion 26
+    dexOptions {
+        javaMaxHeapSize "4g"
+        maxProcessCount 4
+    }
+    defaultConfig {
+        applicationId "com.hishixi.tiku"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        // 默认是umeng的渠道
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "c10445378b0047408db5938f", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "Android", //用户渠道统计的渠道名称
+        ]
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi'//, 'x86'//, 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        release {
+            storeFile file(STORE_FILE_PATH)
+            storePassword STORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            v2SigningEnabled false  // 作用是只使用旧版签名，禁用V2版签名模式
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+        release {
+//         不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            zipAlignEnabled true //zip优化
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/2']
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']
+        }
+    }
+    productFlavors {
+        tencent
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.2.6'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    //rx java
+    compile 'io.reactivex.rxjava2:rxjava:2.0.7'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    //和okhttp版本必须一致
+
+    //dagger2
+    compile 'com.google.dagger:dagger:2.8'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    //rxbinding
+    //leakcanary内粗泄露工具
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile 'org.greenrobot:greendao:3.2.0'
+    //greenDao
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.8'
+    //PackerNg 打多渠道包
+
+    //    compile 'com.umeng.analytics:analytics:latest.integration' //友盟统计
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.1.5
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile 'com.orhanobut:logger:1.15'    //logger工具
+    //rxlifecycle 防止rxjava内存泄漏
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    // If you want to bind to Android-specific lifecycles
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    compile 'com.github.hotchemi:permissionsdispatcher:2.3.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.3.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.3.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
+    compile 'com.liulishuo.filedownloader:library:1.3.9'
+    compile project(':recycler_ptr_library')
+
+    compile 'com.android.support:multidex:1.0.2'
+    //JPUSH消息推送
+    compile 'cn.jiguang.sdk:jpush:3.0.6'  // 此处以JPush 3.0.5 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.3'  // 此处以JCore 1.1.2 版本为例。
+}

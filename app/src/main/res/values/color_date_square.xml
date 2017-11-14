@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="custom_header_text">#85B100</color>
+    <color name="custom_selected">#000000</color>
+    <color name="custom_background">@color/main_content_bg</color>
+    <color name="custom_background_today">@color/transparent</color>
+    <color name="custom_background_disabled">#00000000</color>
+    <color name="custom_text_selected">#FFFFFFFF</color>
+    <color name="custom_text_inactive">#00000000</color>
+</resources>
